@@ -3,11 +3,11 @@ version: '3'
 services:
   web_vue:
     build: .
-    image: web_vue:0.0.1
-    container_name: web_vue
+    image: vue:0.0.1
+    container_name: vue
     volumes:
       - ./app:/app
-    command: sh -c "npm install --force && npm run serve"
+    command: sh -c "npm install --force && npm run $function"
 #    restart: always
     networks:
       - default
