@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  web_vue:
+    build: .
+    image: web_vue:0.0.1
+    container_name: web_vue
+    volumes:
+      - ./app:/app
+    command: sh -c "npm install --force && npm run serve"
+#    restart: always
+    networks:
+      - default
+    ports:
+      - 8080:8080
